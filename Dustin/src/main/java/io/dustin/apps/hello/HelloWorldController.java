@@ -1,4 +1,4 @@
-package com.example.fastcampusmysql.hello;
+package io.dustin.apps.hello;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
