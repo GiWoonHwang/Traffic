@@ -12,6 +12,12 @@ import org.springframework.stereotype.Service;
 public class PostLikeWriteService {
     final private PostLikeRepository postLikeRepository;
 
+    /**
+     * 동시성 테스트 진행하기
+     * 디버그 모드 실행
+     * 브레이크 포인트 설정
+     * 우클릭 후 suspend 옵션을 Thread로 변경 (All로 선택 시 하나의 요청씩 처리함)
+     */
     public void create(Post post, MemberDto memberDto) {
         var postLike = PostLike.builder()
                 .postId(post.getId())
