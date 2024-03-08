@@ -24,6 +24,9 @@ public class PostWriteService {
     }
 
 
+    /**
+     * 비관적 락(줄세우기)를 통한 좋아요 구현
+     */
     @Transactional
     public void likePost(Long postId) {
         var post = postRepository.findById(postId, true).orElseThrow();

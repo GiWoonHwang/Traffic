@@ -227,6 +227,10 @@ public class PostRepository {
                 .build();
     }
 
+    /**
+     * 낙관적 락 구현
+     * 버전관리를 통해 정합성을 유지한다.
+     */
     private Post update(Post post) {
         var sql = String.format("""
         UPDATE %s set 
