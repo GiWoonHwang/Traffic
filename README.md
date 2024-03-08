@@ -13,6 +13,9 @@
 ## 소개
 SpringBoot를 기반으로 대용량 데이터와 대량의 트래픽을 분산으로 처리한다.
 
+학습 후 정리한 내용은 Velog에 정리했습니다.
+- [Velog로 이동하기](https://velog.io/@rlaejrqo465/posts)
+
 ### Chapter 1: Part1.MySQL
 -  [Chapter 1 브랜치로 이동](https://github.com/GiWoonHwang/Traffic/tree/Part1.MySQL)
 
