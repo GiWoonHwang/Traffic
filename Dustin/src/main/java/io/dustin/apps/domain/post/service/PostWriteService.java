@@ -31,6 +31,18 @@ public class PostWriteService {
         postRepository.save(post);
     }
 
+    /**
+     * 두개 이상의 동시 요청이 발생되면 좋아요가 덮어씌워진다.
+     * tx1: read(like:1) -> like update(liek:2) -> save -> commit
+     * tx2: tx가 커밋되기 전에 실행:  read(like:1) -> like update(liek:2) -> save -> commit
+     * 결과적으로 좋아요를 두번 요청했지만  3 아닌 2로 업데이트 된다.
+     */
+    public void likePostError(Long postId) {
+        var post = postRepository.findById(postId, false).orElseThrow();
+        post.incrementLikeCount();
+        postRepository.save(post);
+    }
+
     public void likePostByOptimisticLock(Long postId) {
         var post = postRepository.findById(postId, false).orElseThrow();
         post.incrementLikeCount();
