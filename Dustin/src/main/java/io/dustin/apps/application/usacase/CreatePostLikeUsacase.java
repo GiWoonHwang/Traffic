@@ -13,6 +13,11 @@ public class CreatePostLikeUsacase {
     final private MemberReadService memberReadService;
     final private PostLikeWriteService postLikeWriteService;
 
+    /**
+     * 좋아요 테이블은 분리함으로서 post의 write 성능이 개선됨
+     * post에 대한 락을 설정할 필요가 없다.
+     * 좋아요 테이블에 insert만 발생하기 때문에 하나의 자원에 대한 경합이 발생되지 않는다.
+     */
     public void execute(Long postId, Long memberId) {
         var post = postReadService.getPost(postId);
         var member = memberReadService.getMember(memberId);
