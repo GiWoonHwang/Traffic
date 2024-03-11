@@ -11,5 +11,6 @@
         <module name="Dustin.main" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="16" />
   </component>
 </project>
