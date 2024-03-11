@@ -1,0 +1,27 @@
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Part2.MongoDB\n\n## 목차\n* MongoDB 개요\n    * SQL vs NoSQL\n    * MongoDB 구조 \n    * Replica Set\n    * Sharded Cluster\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+--- a/README.md	
++++ b/README.md	
+@@ -1,10 +1,10 @@
+ # Part2.MongoDB
+ 
+ ## 목차
++
+ * MongoDB 개요
+-    * SQL vs NoSQL
+-    * MongoDB 구조 
+-    * Replica Set
+-    * Sharded Cluster
+-
+-
++
++  * SQL vs NoSQL
++  * MongoDB 구조
++  * Replica Set
++  * Sharded Cluster
