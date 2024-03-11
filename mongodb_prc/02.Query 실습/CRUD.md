@@ -12,12 +12,12 @@ MongoDB Atlas에서 5.0버전을 사용한다.
 
 ```javascript
 db.employees.insertOne({
-    name: "lake",
-    age: 21,
-    dept: "Database",
-    joinDate: new ISODate("2022-10-05"),
-    salary: 400000,
-    bonus: null
+  name: "lake",
+  age: 21,
+  dept: "Database",
+  joinDate: new ISODate("2022-10-05"),
+  salary: 400000,
+  bonus: null,
 });
 ```
 
@@ -25,21 +25,21 @@ db.employees.insertOne({
 
 ```javascript
 db.employees.insertMany([
-    {
-        name: "ocean",
-        age: 45,
-        dept: "Network",
-        joinDate: new ISODate("1999-11-15"),
-        salary: 10000,
-        resignationDate: new ISODate("2002-12-23"),
-        bonus: null
-    },
-    {
-        name: "river",
-        age: 34,
-        dept: "DevOps",
-        isNegotiating: true,
-    },
+  {
+    name: "ocean",
+    age: 45,
+    dept: "Network",
+    joinDate: new ISODate("1999-11-15"),
+    salary: 10000,
+    resignationDate: new ISODate("2002-12-23"),
+    bonus: null,
+  },
+  {
+    name: "river",
+    age: 34,
+    dept: "DevOps",
+    isNegotiating: true,
+  },
 ]);
 ```
 
@@ -48,32 +48,32 @@ db.employees.insertMany([
 ```javascript
 // insertOne
 for (i = 0; i < 300; i++) {
-    db.insertTest.insertOne({ a: i });
+  db.insertTest.insertOne({ a: i });
 }
 
 // insertMany
 var docs = [];
 for (i = 0; i < 300; i++) {
-    docs.push({ a: i });
+  docs.push({ a: i });
 }
 db.insertTest.insertMany(docs);
 ```
 
--   2개 이상의 Document를 생성하는 경우 가능하면 insertMany함수를 활용하는 것이 좋다.
--   속도차이가 Document 수에 비례해서 많이난다.
+- 2개 이상의 Document를 생성하는 경우 가능하면 insertMany함수를 활용하는 것이 좋다.
+- 속도차이가 Document 수에 비례해서 많이난다.
 
 ### Update One
 
 ```javascript
 db.employees.updateOne(
-    { name: "river" },
+    { name: "river" }, # 쿼리필터
     {
-        $set: {
+        $set: { # 필드를 수정한다.
             salary: 350000,
             dept: "Database",
             joinDate: new ISODate("2022-12-31"),
         },
-        $unset: {
+        $unset: { # 필드를 제거한다.
             isNegotiating: "",
         },
     }
@@ -84,19 +84,30 @@ db.employees.updateOne(
 
 ```javascript
 db.employees.updateMany(
+    # $exists: 필드 존재 유무
     { resignationDate: { $exists: false }, joinDate: { $exists: true } },
     {
+        # $mul: 곱하기
         $mul: { salary: Decimal128("1.1") },
     }
 );
 ```
 
 ```javascript
+# 이런식으로 처리하게 되면 bonus 필드가 없는 도큐먼트에 bonus가 추가되면서 100000로 설정된다.
 db.employees.updateMany(
-    { resignationDate: { $exists: false }, bonus: null },
-    {
-        $set: { bonus: 100000 },
-    }
+  { resignationDate: { $exists: false }, bonus: null },
+  {
+    $set: { bonus: 100000 },
+  }
+);
+
+# bonus 필드가 없는 도큐먼트에 100000을 추가하고 싶다면 bonus: { $exists: true } 로 설정해야 한다.
+db.employees.updateMany(
+  { resignationDate: { $exists: false }, bonus: { $exists: true } },
+  {
+    $set: { bonus: 100000 },
+  }
 );
 ```
 
@@ -119,6 +130,7 @@ db.employees.drop();
 ```
 
 ### Find All
+
 ```javascript
 use sample_guides
 db.planets.find();
@@ -126,10 +138,11 @@ db.planets.find({});
 ```
 
 ### Find with Operators
+
 ```javascript
 db.planets.find({name: "Mars"});
 
-db.planets.find({hasRings: true, orderFromSun: {$lte: 6}})
+db.planets.find({hasRings: true, orderFromSun: {$lte: 6}}) # ,는 기본적으로 and
 db.planets.find({
     $and: [
         {hasRings: true},
@@ -139,7 +152,7 @@ db.planets.find({
 
 db.planets.find({
     $or: [
-        {hasRings: {$ne: false}},
+        {hasRings: {$ne: false}}, # $ne 동등하지않은
         {surfaceTempatureC.mean: {$lt: 0}}
     ]
 })
