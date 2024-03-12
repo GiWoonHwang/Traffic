@@ -8,6 +8,7 @@ db.sales.findOne({
 	}
 })
 
+# 데이터 위치만 바뀌어도 출력되지 않는다.
 db.sales.findOne({
 	customer: {
 		satisfaction: 5,
@@ -17,7 +18,7 @@ db.sales.findOne({
 	}
 })
 
-
+# 내장 도큐먼트 안에 있는 필드로 조회한다.
 db.sales.findOne({
 	"customer.email": "keecade@hem.uy"
 })
@@ -34,7 +35,8 @@ db.inventory.insertMany([
 	{ item: "postcard", qty: 45, tags: ["blue"], dim_cm: [ 10, 15.25 ] },
 	{ item: "postcard", qty: 45, tags: ["blue", "red"], dim_cm: [ 13, 14 ] }
 ]);
- 
+
+# 배열도 마찬가지로 필드 순서가 일치해야 한다.
 db.inventory.find({
 	tags: ['red', 'blank']
 })
@@ -44,10 +46,13 @@ db.inventory.find({
 	tags: { $all: ['red', 'blank'] }
 })
 
+# or 조건
 db.inventory.find({
 	tags: { $in: ['red', 'blank'] }
 })
 
+
+# 배열중에 하나라도 쿼리필터 조건에 만족하는 데이터
 db.inventory.find({
 	tags: 'blue'
 })
@@ -56,23 +61,27 @@ db.inventory.find({
 	dim_cm: {$gt: 15}
 })
 
+# 모든 조건에 만족되는 데이터가 하나라도 있으면. 따라서 14나 20도 출력됨
 db.inventory.find({
 	dim_cm: {$gt: 15, $lt: 20}
 })
 
+# 15와 20사이의 값을 하나라도 가진 데이터
 db.inventory.find({
 	dim_cm: {$elemMatch: {$gt: 15, $lt: 20}}
 })
 
+# 배열에 특정 위치(1번인데스)에 있는 요소가 20보다 작은 경우
 db.inventory.find({
 	"dim_cm.1": {$lt: 20}
 })
 
+# 배열 크기에 대한 조회
 db.inventory.find({
 	tags: {$size: 3}
 })
 
-
+# 하나라도 만족하면 데이터 출력
 db.sales.find({
 	"items.name": 'binder',
 	"items.quantity": {$lte: 6}
@@ -87,6 +96,7 @@ db.sales.find({
 	}
 })
 
+# 조건에 만족하는 첫 번쨰 배열만 출력
 db.sales.find(
 	{
 		items: {
