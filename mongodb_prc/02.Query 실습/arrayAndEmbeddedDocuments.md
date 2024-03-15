@@ -122,13 +122,17 @@ db.students.insertMany([
 	{_id: 3, grades: [85, 100, 90]}
 ])
 
+// 아이디가 1 이고, grades가 80인데 이터를 82로 변경
 db.students.updateOne(
 	{ _id: 1, grades: 80 },
 	{$set: {"grades.$": 82}}
 )
 
+// 조건에 맞는 데이터 전체 변경
 db.students.updateMany(
+	// 전체 데이터를 10 올려준다
 	{},
+
 	{$inc: {"grades.$[]": 10}}
 )
 
@@ -145,11 +149,13 @@ db.students.insertMany([
 ])
 
 
+// 처음만나는 grade가 85인 테이터의 std를 6으로 변경
 db.students.updateOne(
 	{ _id: 4, "grades.grade": 85 },
 	{$set: {"grades.$.std": 6}}
 )
 
+// 85인 데이터 전체 변경
 db.students.updateOne(
 	{ _id: 4, grades: {$elemMatch: {grade: {$gte: 85}}} },
 	{$set: {"grades.$[].grade": 100}}
@@ -167,11 +173,13 @@ db.students.insertMany([
 	}
 ])
 
+// grade가 87인 이상의 데이터만 grade를 100으로 변경
 db.students.updateMany(
 	{ _id: 6 },
 	{ $set: {"grades.$[element].grade": 100}},
 	{ arrayFilters: [{"element.grade": {$gte: 87}}] }
 )
+
 
 
 db.students.insertOne(
@@ -186,6 +194,7 @@ db.students.insertOne(
 	}
 )
 
+// 배열 안의 값을 2씩 증가시킨다. (8보다 크거나 같은 경우)
 db.students.updateOne(
 	{ _id: 7 },
 	{ $inc: { "grades.$[].questions.$[score]": 2 } },
@@ -207,61 +216,72 @@ db.shopping.insertMany([
 ])
 
 
+// 배열에 데이터가 없는 경우, 이미 존재하면 삽입되지 않는다.
 db.shopping.updateOne(
 	{ _id: 1 },
 	{$addToSet: {cart: 'beer'}}
 )
 
+// 배열 자체가 들어간다.
 db.shopping.updateOne(
 	{ _id: 1 },
 	{$addToSet: {cart: ['beer', 'candy']}}
 )
 
+// 배열 데이터가 각각 들어간다. (이미 데이터가 있으면 안들어감)
 db.shopping.updateOne(
 	{ _id: 1 },
 	{ $addToSet: { cart: { $each: ['beer', 'candy'] } } }
 )
 
+// 삭제
 db.shopping.updateOne(
 	{ _id: 1 },
 	{$pull: {cart: 'beer'}}
 )
 
+// 여러개의 데이터를 삭제하는 방법
 db.shopping.updateOne(
 	{ _id: 1 },
 	{$pull: {cart: {$in: [['beer', 'candy'], 'milk']}}}
 )
 
 
+// 배열 맨 끝 데이터 제거
 db.shopping.updateOne(
 	{ _id: 1 },
 	{$pop: {cart: -1}}
 )
 
 
+// 카트에서는 맨앞, 쿠폰에서는 맨 뒤를 제거한다.
 db.shopping.updateOne(
 	{ _id: 1 },
 	{$pop: {cart: 1, coupons: -1}}
 )
 
 
+// 맨 뒤에 값을 추가함
 db.shopping.updateOne(
 	{ _id: 1 },
 	{$push: {cart: 'popcorn'}}
 )
 
+// 맨 뒤에 값을 여러개 추가함
 db.shopping.updateOne(
 	{ _id: 1 },
 	{ $push: { coupons: { $each: ['25%', '35%'] } } }
 )
 
+
+// 포지션 위치에 따라 들어감
 db.shopping.updateMany(
 	{},
 	{
 		$push: {
 			coupons: {
 				$each: ['90%', '70%'],
-				$position: 0
+				$position: 0 // 0번이니까 맨 앞에 들어감
 			}
 		}
 	}
@@ -274,7 +294,7 @@ db.shopping.updateMany(
 			coupons: {
 				$each: ['15%', '20%'],
 				$position: 0,
-				$slice: 5
+				$slice: 5 // 배열의 크기를 5로 지정한다.
 			}
 		}
 	}
@@ -287,10 +307,12 @@ db.shopping.updateMany(
 			coupons: {
 				$each: ['90%', '99%'],
 				$position: -1,
-				$sort: -1,
+				$sort: -1, // 배열크기 정렬 -1을 내림차순
 				$slice: 5
 			}
 		}
 	}
 )
 ```
+
+배열이 클 수록 addTOse이나 pull을 사용하게 되면 배열을 전체 탐색하기 때문에 시간복잡도가 커진다.
