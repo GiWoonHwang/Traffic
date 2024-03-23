@@ -4,6 +4,9 @@ from pymongo.write_concern import WriteConcern
 from pymongo.errors import ConnectionFailure, OperationFailure
 import certifi
 
+# 몽고디비는 트랜잭션을 추천하지 않는다.
+# 몽고디비는 같은 오브젝트를 참조하면 에러를 발생시킨다. -> 복구에 대한 비용이 매우 크다
+# 4.0 버전에서 직접 retry를 구현해본다.
 conn = "mongodb+srv://mongodb_user:__PWD__@cluster0.v6fiw3s.mongodb.net/"
 client = MongoClient(conn, tlsCAFile=certifi.where())
 
@@ -54,12 +57,14 @@ def run_transaction_with_retry(transaction_func, session):
 			transaction_func(session)
 			break
 		except (ConnectionFailure, OperationFailure) as err:
+			# retry가 필요한 오류가 발생한 경우 while문을 계속 진행한다.
 			if err.has_error_label("TransientTransactionError"):
 				print("TransientTransactionError, retryinh transaction...")
 				continue
 			else:
 				raise
 
+# 세션을 열고 트랜잭션 실행한다.
 with client.start_session() as session:
 	try:
 		run_transaction_with_retry(update_orders_and_inventory, session)
