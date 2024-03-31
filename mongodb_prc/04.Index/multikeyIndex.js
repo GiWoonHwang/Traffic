@@ -20,7 +20,7 @@ show collections
 
 db.grades.findOne()
 
-// 배열안 내장도큐먼트에 대해 인덱스 설정
+// 배열안 내장 도큐먼트에 대해 인덱스 설정
 db.grades.createIndex({"scores.type":1})
 
 db.grades.getIndexes()
