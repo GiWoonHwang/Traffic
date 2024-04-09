@@ -1,5 +1,10 @@
 # Part1.MySQL
 
+## 환경
+- Framework: SpringBoot 2.7.2
+- Language: Java 16
+- DataBase: MySQL@8.0
+
 ## 목차
 * MySQL   
   * MySQL 아키텍쳐 이해하기
