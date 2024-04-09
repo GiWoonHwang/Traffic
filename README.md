@@ -6,9 +6,7 @@
 - MEMORY: 18G
 - DISK: 512G
 - IntelliJ memory setting(-Xmx4096m)
-- Framework: SpringBoot 2.7.2
-- Language: Java 16
-- DataBase: MySQL@8.0, MongoDB@5.0.21
+
 
 
 ## 소개
