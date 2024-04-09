@@ -1,0 +1,20 @@
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ProjectModuleManager\">\n    <modules>\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/traffic.iml\" filepath=\"$PROJECT_DIR$/.idea/traffic.iml\" />\n    </modules>\n  </component>\n</project>
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+--- a/.idea/modules.xml	
++++ b/.idea/modules.xml	
+@@ -2,7 +2,9 @@
+ <project version="4">
+   <component name="ProjectModuleManager">
+     <modules>
+-      <module fileurl="file://$PROJECT_DIR$/.idea/traffic.iml" filepath="$PROJECT_DIR$/.idea/traffic.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Dustin.iml" filepath="$PROJECT_DIR$/.idea/modules/Dustin.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Dustin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Dustin.main.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Dustin.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Dustin.test.iml" />
+     </modules>
+   </component>
+ </project>
+\ No newline at end of file
