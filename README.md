@@ -1,5 +1,8 @@
 # Part2.MongoDB
 
+## 환경
+- DataBase: MongoDB@5.0.21
+
 ## 목차
 * MongoDB 개요
     * SQL vs NoSQL
