@@ -1,8 +1,8 @@
-# Part1.MySQL
+# Part3.Redis
 
 ## 환경
 - Framework: SpringBoot 2.7.2
-- Language: Java 16
+- Language: Java 8
 - DataBase: MySQL@8.0
 
 ## 목차
