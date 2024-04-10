@@ -1,4 +1,4 @@
-package io.dustin.apps;
+package io.dustin.apps.prc;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
