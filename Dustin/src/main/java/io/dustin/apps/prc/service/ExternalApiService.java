@@ -1,5 +1,6 @@
 package io.dustin.apps.prc.service;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -26,7 +27,7 @@ public class ExternalApiService {
         return "";
 
     }
-
+    @Cacheable(cacheNames = "userAgeCache", key="#userId")
     public int getUserAge(String userId) {
         // 외부 서비스나 DB 호출 예시
         try {
