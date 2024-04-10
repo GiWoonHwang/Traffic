@@ -5,7 +5,7 @@
 - MEMORY: 18G
 - DISK: 512G
 
-## 사용된 기술
+## Tool
 - Spring Boot 2.7.2
 - Java 16
 - MySQL 8.0
