@@ -42,15 +42,15 @@ public class SimpleTest {
         System.out.println(String.format("Range - Took %d ms", elapsed.getNano() / 1000000));
     }
 
-    @Test
-    void insertScore() {
-        for(int i=0; i<1000000; i++) {
-            int score = (int)(Math.random() * 1000000); // 0 ~ 999999
-            String userId = "user_" + i;
-
-            rankingService.setUserScore(userId, score);
-        }
-    }
+//    @Test
+//    void insertScore() {
+//        for(int i=0; i<1000000; i++) {
+//            int score = (int)(Math.random() * 1000000); // 0 ~ 999999
+//            String userId = "user_" + i;
+//
+//            rankingService.setUserScore(userId, score);
+//        }
+//    }
 
     // 자바의 ArrayList에 값을 추가하고 정렬을 했을 때 걸리는 시간 측정, 100만개 데이터 삽입
     // 약 175 ms
