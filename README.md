@@ -4,6 +4,7 @@
 - Framework: SpringBoot 2.7.2
 - Language: Java 8
 - DataBase: MySQL@8.0
+- Redis: 7.2
 
 ## 목차
 * MySQL   
