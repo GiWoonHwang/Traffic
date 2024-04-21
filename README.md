@@ -7,42 +7,62 @@
 - Redis: 7.2
 
 ## 목차
-* MySQL   
-  * MySQL 아키텍쳐 이해하기
+* Redis 소개  
+  * Redis 이해하기
 
 
-* 정규화
-    * 실무에서 정규화-비정규화에 대한 고민
+* Redis Data Type
 
 
-* 인덱스
-    * 인덱스의 동작과 자료구조
-    * 클러스터 인덱스
-    * 인덱스 추가를 통한 선능 비교
+* 분산환경에서 세션 스토어 만들기
+    * 세션이란
+    * Spring Boot에서의 세션 관리
+    * Redis를 사용한 세션 클러스터링
 
 
-* 페이지네이션
-    * 오프셋 기반 페이지네이션
-    * 커서 기반 페이지네이션
-    * 커버링 인덱스
+* 캐싱
+    * Redis를 사용한 캐싱
+    * Spring Boot의 캐싱 기능을 활용한 비즈니스 로직 구현
 
 
-* 트랜잭션
-    * 트랜잭션이 존재하지 않다면?
-    * ACID
-    * 트랜잭션으로 타임라인 정합성 보장하기
-    * 트랜잭션 범위 좁히기
-    * 트랜잭션 격리 레벨
+* 리더보드 만들기
+    * Sorted-Set을 이용한 리더보드 구현
 
 
+* Pub-Sub을 이용한 채팅방 기능 만들기
+    * Pub-Sub 이해하기
+    * 채팅방 만들기
+  
 
-* 동시성
-    * 멀티 스레드 환경 이해
-    * 쓰기락, 읽기 락
-    * 비관적 락, 낙관적 락
-    * 낙관적 락을 통한 좋아요 구현
-    * 좋아요 테이블 분리
-    * 읽기와 쓰기의 트레이드 오프
+* Redis 백업과 장애 복구 이용한 채팅방 기능 만들기
+  * RDB
+  * AOF
+  * 복제
+  * Sentinel을 이용한 장애조치
+
+
+* Redis 클러스터
+  * 클러스터 이해하기
+  * 클러스터 구성하기
+
+
+* Redis 성능 튜닝
+  * Eviction 정책
+  * 시스템 튜닝
+  * SLOWLOG를 이용한 쿼리 튜닝
+
+
+* Redis Streams을 이용한 Event-Driven 아키텍쳐
+  * Redis Streams 이해하기
+  * Redis Streams을 이용한 이벤트 기반 통신 개발
+
+
+* 글로벌 서비스를 위한 Active-Active Architecture
+  * Active-Active Architecture 구성하기 
+  * CRDTs로 데이터 충돌 최소화 하기
+  * Docker를 사용해 Active-Active 아키텍처 구성해보기
+
+
 
 [Write 성능측정 확인하기](./Write.test.md)
 
