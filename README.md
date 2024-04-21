@@ -18,8 +18,12 @@ SpringBoot를 기반으로 대용량 데이터와 대량의 트래픽을 분산�
 ### Chapter 1: Part1.MySQL
 -  [Chapter 1 브랜치로 이동](https://github.com/GiWoonHwang/Traffic/tree/Part1.MySQL)
 
-### Chapter 2: Part1.MongoDB
+### Chapter 2: Part2.MongoDB
 -  [Chapter 2 브랜치로 이동](https://github.com/GiWoonHwang/Traffic/tree/Part2.MongoDB)
+
+### Chapter 3: Part2.Redis
+-  [Chapter 3 브랜치로 이동](https://github.com/GiWoonHwang/Traffic/tree/Part3.Redis)
+
 
 
 

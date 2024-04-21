@@ -7,6 +7,14 @@
       <sourceFolder url="file://$MODULE_DIR$/../../Dustin/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../Dustin/src/main/resources" type="java-resource" />
     </content>
+    <content url="file://$MODULE_DIR$/../../Dustin/src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../Dustin/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Dustin/src/main/resources" type="java-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../Dustin/src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../Dustin/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Dustin/src/main/resources" type="java-resource" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.springframework.boot:spring-boot-configuration-processor:2.7.2" level="project" />
