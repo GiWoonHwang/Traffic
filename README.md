@@ -57,12 +57,6 @@
   * Redis Streams을 이용한 이벤트 기반 통신 개발
 
 
-* 글로벌 서비스를 위한 Active-Active Architecture
-  * Active-Active Architecture 구성하기 
-  * CRDTs로 데이터 충돌 최소화 하기
-  * Docker를 사용해 Active-Active 아키텍처 구성해보기
-
-
 
 [Write 성능측정 확인하기](./Write.test.md)
 
