@@ -24,7 +24,7 @@ SpringBoot를 기반으로 대용량 데이터와 대량의 트래픽을 분산�
 ### Chapter 3: Part3.Redis
 -  [Chapter 3 브랜치로 이동](https://github.com/GiWoonHwang/Traffic/tree/Part3.Redis)
 
-### Chapter 4: Part3.Kafka
+### Chapter 4: Part4.Kafka
 -  [Chapter 4 브랜치로 이동](https://github.com/GiWoonHwang/Traffic/tree/Part4.Kafka)
 
 
