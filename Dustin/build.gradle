@@ -15,12 +15,14 @@ repositories {
 	mavenCentral()
 }
 
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.kafka:spring-kafka'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	implementation 'org.apache.kafka:kafka-clients:2.8.2'
-	// 상세로그 확인하기
-	implementation 'org.slf4j:slf4j-simple:2.0.3'
+	testImplementation 'org.springframework.kafka:spring-kafka-test'
 }
 
 tasks.named('bootBuildImage') {

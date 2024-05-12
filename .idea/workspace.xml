@@ -4,10 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c404b92e-98cb-454c-a44c-842cdb5685e9" name="Changes" comment="readme update">
-      <change afterPath="$PROJECT_DIR$/Dustin/src/main/java/io/dustin/DustinApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dustin/src/main/java/io/dustin/kafka/prc1/Consumer1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dustin/src/main/java/io/dustin/kafka/prc1/Producer1.java" afterDir="false" />
+    <list default="true" id="c404b92e-98cb-454c-a44c-842cdb5685e9" name="Changes" comment="java client를 이용하여 Producer, Consumer 구현">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/dustin.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dustin/src/main/java/io/dustin/kafka/prc2/KafkaConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dustin/src/main/java/io/dustin/kafka/prc2/KafkaConsumerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dustin/src/main/java/io/dustin/kafka/prc2/KafkaProduceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dustin/src/main/java/io/dustin/kafka/prc2/KafkaProducerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dustin/src/main/java/io/dustin/kafka/prc2/MyMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dustin/src/main/java/io/dustin/kafka/prc2/ProducerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dustin/src/test/java/io/dustin/DustinApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dustin/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Dustin/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +35,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/dustin">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -56,27 +69,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Gradle.dustin [:Consumer1.main()].executor": "Run",
-    "Gradle.dustin [:DustinApplication.main()].executor": "Run",
-    "Gradle.dustin [:Producer1.main()].executor": "Run",
-    "Gradle.dustin [dependencies].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Part4.Kafka",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/dustin/Desktop/common/Traffic/dustin/src/main/java/io/dustin/kafka/prc1"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Gradle.dustin [:Consumer1.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.dustin [:DustinApplication.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.dustin [:Producer1.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.dustin [dependencies].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Part4.Kafka&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/dustin/Desktop/common/Traffic/dustin/src/main/java/io/dustin/kafka/prc2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dustin/src/main/java/io/dustin/kafka/prc2" />
       <recent name="$PROJECT_DIR$/dustin/src/main/java/io/dustin/kafka/prc1" />
       <recent name="$PROJECT_DIR$/Dustin/src/main/java/io/dustin/example" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Consumer1">
+  <component name="RunManager" selected="Application.DustinApplication">
     <configuration name="Consumer1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="io.dustin.kafka.prc1.Consumer1" />
       <module name="dustin.main" />
@@ -156,11 +171,29 @@
       <option name="presentableId" value="Default" />
       <updated>1714569078644</updated>
     </task>
+    <task id="LOCAL-00001" summary="java client를 이용하여 Producer, Consumer 구현">
+      <option name="closed" value="true" />
+      <created>1715499909610</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715499909610</updated>
+    </task>
+    <task id="LOCAL-00002" summary="java client를 이용하여 Producer, Consumer 구현">
+      <option name="closed" value="true" />
+      <created>1715499918779</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715499918779</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="readme update" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme update" />
+    <MESSAGE value="java client를 이용하여 Producer, Consumer 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="java client를 이용하여 Producer, Consumer 구현" />
   </component>
 </project>
