@@ -28,7 +28,7 @@
 ### Chapter 5: Part5.APIGateway
 -  [Chapter 5 브랜치로 이동](https://github.com/GiWoonHwang/Traffic/tree/Part5.APIGateway)
 
-### Chapter 6: Part5.Pinpoint
+### Chapter 6: Part6.Pinpoint
 -  [Chapter 6 브랜치로 이동](https://github.com/GiWoonHwang/Traffic/tree/Part6.Pinpoint)
 
 
