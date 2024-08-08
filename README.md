@@ -1,7 +1,7 @@
-# 대용량 데이터 & 트래픽 처리
+# 분산 트래픽 처리
 
 ## 소개
-SpringBoot를 기반으로 대용량 데이터와 대량의 트래픽을 분산으로 처리한다.
+ 분산 트래픽을 처리하기 위한 기술을 익히고 실습한다. 
 
 ## 환경
 
@@ -24,6 +24,12 @@ SpringBoot를 기반으로 대용량 데이터와 대량의 트래픽을 분산�
 
 ### Chapter 4: Part4.Kafka
 -  [Chapter 4 브랜치로 이동](https://github.com/GiWoonHwang/Traffic/tree/Part4.Kafka)
+
+### Chapter 5: Part5.APIGateway
+-  [Chapter 5 브랜치로 이동](https://github.com/GiWoonHwang/Traffic/tree/Part5.APIGateway)
+
+### Chapter 6: Part5.Pinpoint
+-  [Chapter 6 브랜치로 이동](https://github.com/GiWoonHwang/Traffic/tree/Part6.Pinpoint)
 
 
 
